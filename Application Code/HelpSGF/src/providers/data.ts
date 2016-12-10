@@ -27,7 +27,7 @@ export class Data {
     }
   }
 
-    sendAlert(message: string){
+    sendAlert(message: string, title: string){
 
         let headers      = new Headers({
             'Content-Type': 'application/json',
@@ -37,7 +37,19 @@ export class Data {
         let options = new RequestOptions({ headers: headers }); // Create a request option
 
 
-        let query = {"profile":"dev","notification":{"message": message},"send_to_all":true};
+        let query = {
+            "profile": "dev",
+            "notification": {
+                "message": message,
+                "ios": {
+                    "message": message,
+                    "sound": "default",
+                    "title": title,
+                    "payload": {"some": "thing"}
+                },
+            },
+            "send_to_all":true
+        };
 
         return new Promise(resolve => {
             // We're using Angular HTTP provider to request the data,

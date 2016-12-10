@@ -27,7 +27,7 @@ export class AlertCreatePage {
     }
 
     sendAlert(){
-        this.dataProvider.sendAlert(this.msg);
+        this.dataProvider.sendAlert(this.msg, "New Alert Created");
         this.presentToast();
         this.viewCtrl.dismiss();
     }

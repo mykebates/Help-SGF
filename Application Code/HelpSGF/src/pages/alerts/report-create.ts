@@ -21,7 +21,7 @@ export class ReportCreatePage {
     }
 
     sendAlert(){
-        this.dataProvider.sendAlert(this.msg);
+        this.dataProvider.sendAlert(this.msg, "New Report Created");
         this.presentToast();
         this.viewCtrl.dismiss();
     }
