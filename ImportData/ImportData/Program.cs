@@ -47,13 +47,17 @@ namespace ImportData
             string fileData = System.IO.File.ReadAllText(@"C:\inetpub\domains\Help SGF\Information and Resources\Data\Hack4GoodSGF\real direcoty.json");
 
             IList<ShelterRecordWithTags> resources = JsonConvert.DeserializeObject<IList<ShelterRecordWithTags>>(fileData);
+            var count = 0;
+
             foreach (var resource in resources)
             {
+                count++;
                 resource.Resource.Location = new GeoPoint();
                 resource.Resource.Location.lat = resource.Resource.Latitude;
                 resource.Resource.Location.lon = resource.Resource.Longitude;
-                resource.Resource.Restriction = resource.Tags;
-
+                if(count % 2 == 0) { 
+                    resource.Resource.Restriction = resource.Tags;
+                }
 
             }
 

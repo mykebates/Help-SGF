@@ -3,6 +3,8 @@ import {NavController, ModalController} from 'ionic-angular';
 import {Push, PushToken} from '@ionic/cloud-angular';
 import { Platform } from 'ionic-angular';
 import {ReportCreatePage} from '../alerts/report-create';
+import {AboutPage} from '../about/about';
+import {ListPage} from '../resource/list';
 
 @Component({
     selector: 'page-home',
@@ -26,6 +28,14 @@ export class HomePage {
         }
     }
 
+    searchWifi(){
+        this.navCtrl.push(AboutPage);
+    }
+
+
+    findShelters(){
+        this.navCtrl.push(ListPage);
+    }
 
     showReportCreateModal() {
         let modal = this.modalCtrl.create(ReportCreatePage);

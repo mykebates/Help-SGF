@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the Resource page.
@@ -12,8 +12,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'resource.html'
 })
 export class ResourcePage {
-
-  constructor(public navCtrl: NavController) {}
+  shelter: any;
+  constructor(public navCtrl: NavController, private navParams: NavParams) {
+      console.log(this.navParams.data);
+      this.shelter = this.navParams.data;
+  }
 
   ionViewDidLoad() {
     console.log('Hello ResourcePage Page');

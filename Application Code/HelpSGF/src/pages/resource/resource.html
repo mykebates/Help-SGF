@@ -8,13 +8,13 @@
 <ion-content>
     <header padding>
         <div class="main">
-            <h1>Parenting Life Skills Center (PLSC) - A Great Circle Agency</h1>
-            <h2>.2 mi</h2>
+            <h1>{{ shelter.name }}</h1>
+            <h2>{{ shelter.sort[0] | number:'1.2-2' }} mi</h2>
         </div>
 
         <div class="secondary">
             <div class="left">
-                <h3>WIFI, Resources, Community, Jobs</h3>
+                <h3>{{ shelter.services }}</h3>
                 <h4>Hours Today: 9:00 AM – 3:00 PM</h4>
             </div>
             <div class="right">
@@ -30,7 +30,7 @@
     <div class="details">
         <ion-list>
             <ion-item>
-                <h2>600 S. Jefferson Ave., Springfield, MO 65806</h2>
+                <h2>{{ shelter.address1 }}, {{ shelter.city }}, {{ shelter.state }} {{ shelter.zip }}</h2>
                 <p></p>
                 <ion-icon name="ios-arrow-forward" item-right></ion-icon>
             </ion-item>
@@ -45,28 +45,28 @@
             <ion-item>
                 <ion-icon name="call" item-left color="primary"></ion-icon>
                 <h2>Call</h2>
-                <p>417-831-9596</p>
+                <p>{{ shelter.phone }}</p>
                 <ion-icon name="ios-arrow-forward" item-right></ion-icon>
             </ion-item>
 
-            <ion-item>
+            <ion-item *ngIf="shelter.webpage">
                 <ion-icon name="link" item-left color="primary"></ion-icon>
                 <h2>Website</h2>
-                <p><a href="#">http://greatcircle.org</a></p>
+                <p><a href="http://{{ shelter.webpage }}">{{ shelter.webpage }}</a></p>
                 <ion-icon name="ios-arrow-forward" item-right></ion-icon>
             </ion-item>
 
-            <ion-item>
+            <ion-item *ngIf="shelter.facebookname">
                 <ion-icon name="logo-facebook" item-left color="primary"></ion-icon>
                 <h2>Facebook</h2>
-                <p>/greatcircle</p>
+                <p><a href="{{ shelter.facebookurl }}">{{ shelter.facebookname }}</a></p>
                 <ion-icon name="ios-arrow-forward" item-right></ion-icon>
             </ion-item>
 
-            <ion-item>
+            <ion-item *ngIf="shelter.twitter">
                 <ion-icon name="logo-twitter" item-left color="primary"></ion-icon>
                 <h2>Twitter</h2>
-                <p>@greatcircleorg</p>
+                <p>@{{ shelter.twitter }}</p>
                 <ion-icon name="ios-arrow-forward" item-right></ion-icon>
             </ion-item>
 

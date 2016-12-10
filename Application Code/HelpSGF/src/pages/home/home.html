@@ -12,14 +12,15 @@
 </ion-header>
 
 <ion-content>
+
     <div class="categories">
         <ion-grid>
             <ion-row>
-                <ion-col width-33>
+                <ion-col width-33 (click)="searchWifi()">
                     <img src="assets/images/wifi.png" alt="">
                     <p>WIFI</p>
                 </ion-col>
-                <ion-col width-33>
+                <ion-col width-33 (click)="findShelters()">
                     <img src="assets/images/Shelter.png" alt="">
                     <p>Shelter</p>
                 </ion-col>
