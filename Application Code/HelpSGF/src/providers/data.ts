@@ -19,7 +19,7 @@ export class Data {
 
 
     if (platform.is('cordova')) {
-      this.es_server = "http://192.168.0.137:9200/"
+      this.es_server = "http://dataadmin.helpsgf.tomrankin.net:9200/"
       this.alert_server = "https://api.ionic.io/"
     } else {
       this.es_server = "/api/";
