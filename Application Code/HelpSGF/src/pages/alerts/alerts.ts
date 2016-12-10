@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {ModalController} from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 import {AlertCreatePage} from './alert-create';
 
 @Component({
