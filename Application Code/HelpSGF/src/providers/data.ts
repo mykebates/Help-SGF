@@ -63,6 +63,31 @@ export class Data {
         });
     }
 
+    shelterSearch(text: string){
+
+        let query = {
+            "from" : 0, "size" : 100,
+            "query": {
+                "multi_match" : {
+                    "query":  text,
+                    "fields": [ "name", "address1", "services" ]
+                }
+            }
+        };
+
+        return new Promise(resolve => {
+
+            this.http.post(this.es_server + 'hack4goodsgf/shelter/_search', query)
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                });
+        });
+
+
+    }
+
+
     getShelters(lat: number, lon: number, distance: number){
         let query =  {
             "from" : 0, "size" : 100,

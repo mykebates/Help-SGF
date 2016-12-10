@@ -9,7 +9,7 @@
     <header padding>
         <div class="main">
             <h1>{{ shelter.name }}</h1>
-            <h2>{{ shelter.sort[0] | number:'1.2-2' }} mi</h2>
+            <h2 *ngIf="shelter.sort">{{ shelter.sort[0] | number:'1.2-2' }} mi</h2>
         </div>
 
         <div class="secondary">

@@ -5,14 +5,19 @@ import { Platform } from 'ionic-angular';
 import {ReportCreatePage} from '../alerts/report-create';
 import {AboutPage} from '../about/about';
 import {ListPage} from '../resource/list';
+import { Data } from '../../providers/data';
+import { SearchResultsPage } from '../resource/searchresult';
 
 @Component({
     selector: 'page-home',
-    templateUrl: 'home.html'
+    templateUrl: 'home.html',
+    providers: [ Data ]
 })
 export class HomePage {
 
-    constructor(public navCtrl: NavController, public push: Push, private platform: Platform, public modalCtrl: ModalController) {
+    searchText: string;
+
+    constructor(public navCtrl: NavController, public push: Push, private platform: Platform, public modalCtrl: ModalController, private dataProvider: Data) {
 
         if (platform.is('cordova')) {
             this.push.register().then((t: PushToken) => {
@@ -26,6 +31,16 @@ export class HomePage {
                     alert(msg.title + ': ' + msg.text);
              });
         }
+    }
+
+
+    submitSearchForm(){
+
+        let self = this;
+        this.dataProvider.shelterSearch(this.searchText).then(function(data: any){
+            self.navCtrl.push(SearchResultsPage, data.hits.hits);
+                console.log(data);
+        });
     }
 
     searchWifi(){
