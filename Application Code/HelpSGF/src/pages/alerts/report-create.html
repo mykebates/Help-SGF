@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Create a New Alert
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span color="primary">Cancel</span>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Message</ion-label>
+            <ion-textarea [(ngModel)]="msg"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked style="text-align: center"><ion-icon name="camera" style="font-size: 3em;" (click)="getPicture()"></ion-icon></ion-label>
+        </ion-item>
+        <ion-item>
+            <img [src]="base64Image" style="height: 250px; width: 100%; object-fit: cover" *ngIf="base64Image" />
+        </ion-item>
+
+        <ion-item>
+            <button ion-button full (click)="sendAlert()">Send Report</button>
+        </ion-item>
+
+
+
+    </ion-list>
+</ion-content>

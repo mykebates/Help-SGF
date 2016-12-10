@@ -5,18 +5,12 @@ import { Data } from '../../providers/data';
 
 
 @Component({
-    selector: 'page-alert-create',
-    templateUrl: 'alert-create.html',
+    selector: 'page-report-create',
+    templateUrl: 'report-create.html',
     providers: [Data]
 })
-
-export class AlertCreatePage {
+export class ReportCreatePage {
     public base64Image: string;
-    public gathering_tree: boolean;
-    public hearts_for_homeless: boolean;
-    public gathering_friends: boolean;
-    public sgf_police: boolean;
-    public homeless_court: boolean;
     public msg: string;
 
     constructor(public navCtrl: NavController, public viewCtrl: ViewController, public toastCtrl: ToastController, private dataProvider: Data) {
@@ -35,7 +29,7 @@ export class AlertCreatePage {
 
     presentToast() {
         let toast = this.toastCtrl.create({
-            message: 'Your alert has been delivered.',
+            message: 'Your report has been delivered.',
             duration: 3000,
             position: 'middle'
         });

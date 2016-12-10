@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Platform } from 'ionic-angular';
 
@@ -13,18 +13,43 @@ import { Platform } from 'ionic-angular';
 export class Data {
 
   es_server: string;
+  alert_server: string;
 
   constructor(public http: Http, private platform: Platform) {
 
 
     if (platform.is('cordova')) {
       this.es_server = "http://192.168.0.137:9200/"
+      this.alert_server = "https://api.ionic.io/"
     } else {
       this.es_server = "/api/";
+      this.alert_server = "/alert/";
     }
   }
 
-    
+    sendAlert(message: string){
+
+        let headers      = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YzhkZDIyNi02MjM3LTRhYzktOGVmMS0zODk1MTg1MDE1MmQifQ.Jb_yZNppY0KONYX6sAtBOvmAIb21kGCw9eB7DiDV01w'
+        }); // ... Set content type to JSON
+
+        let options = new RequestOptions({ headers: headers }); // Create a request option
+
+
+        let query = {"profile":"dev","notification":{"message": message},"send_to_all":true};
+
+        return new Promise(resolve => {
+            // We're using Angular HTTP provider to request the data,
+            // then on the response, it'll map the JSON data to a parsed JS object.
+            // Next, we process the data and resolve the promise with the new data.
+            this.http.post(this.alert_server + 'push/notifications', query, options)
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                });
+        });
+    }
 
     getShelters(lat: number, lon: number, distance: number){
         let query =  {

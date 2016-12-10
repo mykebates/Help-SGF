@@ -7,6 +7,7 @@ import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 import {AlertsPage} from '../pages/alerts/alerts';
 import {AlertCreatePage} from '../pages/alerts/alert-create';
+import {ReportCreatePage} from '../pages/alerts/report-create';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 const cloudSettings: CloudSettings = {
@@ -32,7 +33,8 @@ const cloudSettings: CloudSettings = {
         HomePage,
         TabsPage,
         AlertsPage,
-        AlertCreatePage
+        AlertCreatePage,
+        ReportCreatePage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -46,7 +48,8 @@ const cloudSettings: CloudSettings = {
         HomePage,
         TabsPage,
         AlertsPage,
-        AlertCreatePage
+        AlertCreatePage,
+        ReportCreatePage
     ],
     providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

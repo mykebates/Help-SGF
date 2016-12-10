@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 import {Push, PushToken} from '@ionic/cloud-angular';
 import { Platform } from 'ionic-angular';
-
+import {ReportCreatePage} from '../alerts/report-create';
 
 @Component({
     selector: 'page-home',
@@ -10,7 +10,7 @@ import { Platform } from 'ionic-angular';
 })
 export class HomePage {
 
-    constructor(public navCtrl: NavController, public push: Push, private platform: Platform) {
+    constructor(public navCtrl: NavController, public push: Push, private platform: Platform, public modalCtrl: ModalController) {
 
         if (platform.is('cordova')) {
             this.push.register().then((t: PushToken) => {
@@ -27,6 +27,10 @@ export class HomePage {
     }
 
 
+    showReportCreateModal() {
+        let modal = this.modalCtrl.create(ReportCreatePage);
+        modal.present();
+    }
 
 
 }

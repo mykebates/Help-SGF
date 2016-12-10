@@ -4,7 +4,12 @@
   "v2": true,
   "typescript": true,
   "proxies": [{
-    "path": "/api",
-    "proxyUrl": "http://192.168.0.137:9200"
-  }]
+        "path": "/api",
+        "proxyUrl": "http://192.168.0.137:9200"
+    },
+    {
+      "path": "/alert",
+      "proxyUrl": "https://api.ionic.io"
+    }
+  ]
 }
