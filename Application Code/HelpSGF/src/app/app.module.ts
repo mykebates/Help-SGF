@@ -45,4 +45,5 @@ const cloudSettings: CloudSettings = {
     providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {
+
 }

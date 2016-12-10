@@ -13,6 +13,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.helpsgf381988"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.helpsgf381988"
         }
     },
     "dependent_plugins": {

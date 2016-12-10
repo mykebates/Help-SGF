@@ -1,3 +1,21 @@
 page-home {
+    header {
+        background: #D1286D; min-height: 218px;
+        text-align: center;
+        padding: 24px 0 40px 0;
+        //position: fixed;
 
+        .logo img { width: 40%; }
+    }
+
+    .search_form {
+        width: 75%; margin: 0 auto; border-bottom: 1px solid #fff; padding-bottom: 7px;
+        input { width: 90%; background: transparent; border: 0; padding: 0; font-size: 18px; }
+        img { position: relative; top: 6px; }
+    }
+
+    .categories {
+        ion-grid { text-align: center; }
+        ion-row { margin-top: 75px; }
+    }
 }
