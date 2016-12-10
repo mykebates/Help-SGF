@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>
-            Description
+            Create a New Alert
         </ion-title>
         <ion-buttons start>
             <button ion-button (click)="dismiss()">
@@ -14,12 +14,38 @@
 <ion-content>
     <ion-list>
         <ion-item>
-            <ion-avatar item-left>
-                <img src="assets/images/annie.png">
-            </ion-avatar>
-            <h2>Annie Busch</h2>
-            <p>Hello World</p>
+            <ion-label stacked>Message</ion-label>
+            <ion-textarea [(ngModel)]="msg"></ion-textarea>
         </ion-item>
+        <ion-item>
+            <ion-label stacked style="text-align: center"><ion-icon name="camera" style="font-size: 3em;" (click)="getPicture()"></ion-icon></ion-label>
+            <img [src]="base64Image" *ngIf="base64Image" />
+        </ion-item>
+        <ion-list>
+
+            <ion-item>
+                <ion-label>Gathering Tree</ion-label>
+                <ion-toggle [(ngModel)]="gathering_tree"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Hearts for the Homeless</ion-label>
+                <ion-toggle [(ngModel)]="hearts_for_homeless"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Gathering Friends</ion-label>
+                <ion-toggle [(ngModel)]="gathering_friends"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>SGF Police</ion-label>
+                <ion-toggle [(ngModel)]="sgf_police"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Homeless Court</ion-label>
+                <ion-toggle [(ngModel)]="homeless_court"></ion-toggle>
+            </ion-item>
+
+
+        </ion-list>
 
 
     </ion-list>
