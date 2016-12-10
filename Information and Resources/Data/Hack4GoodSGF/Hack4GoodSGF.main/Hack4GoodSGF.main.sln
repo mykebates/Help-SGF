@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack4GoodSGF.main", "Hack4GoodSGF.main.csproj", "{E99383E5-B4D9-4694-9E6E-C13DC10087CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack4GoodSGF.data", "..\Hack4GoodSGF.data\Hack4GoodSGF.data.csproj", "{C65CB698-144D-42C8-8554-D6F28F43D323}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E99383E5-B4D9-4694-9E6E-C13DC10087CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99383E5-B4D9-4694-9E6E-C13DC10087CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99383E5-B4D9-4694-9E6E-C13DC10087CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99383E5-B4D9-4694-9E6E-C13DC10087CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65CB698-144D-42C8-8554-D6F28F43D323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65CB698-144D-42C8-8554-D6F28F43D323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65CB698-144D-42C8-8554-D6F28F43D323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65CB698-144D-42C8-8554-D6F28F43D323}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

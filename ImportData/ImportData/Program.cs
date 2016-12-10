@@ -43,9 +43,9 @@ namespace ImportData
             IList<OtherResource> resources = JsonConvert.DeserializeObject<IList<OtherResource>>(fileData);
             foreach(var resource in resources)
             {
-                resource.geo_point = new GeoPoint();
-                resource.geo_point.lat = resource.lat;
-                resource.geo_point.lon = resource.lon;
+                resource.location = new GeoPoint();
+                resource.location.lat = resource.lat;
+                resource.location.lon = resource.lon;
 
             }
 
@@ -58,10 +58,11 @@ namespace ImportData
                 foreach (var asset in resources.Skip(250 * i).Take(250).ToList())
                 {
                     var docToIndex = new OtherResource();
+                    docToIndex.resource_type = "wifi";
                     docToIndex.name = asset.name;
                     docToIndex.lat = asset.lat;
                     docToIndex.lon = asset.lon;
-                    docToIndex.geo_point = asset.geo_point;
+                    docToIndex.location = asset.location;
 
                     docsToIndex.Add(docToIndex);
 
@@ -86,19 +87,27 @@ namespace ImportData
         }
     }
 
-    [ElasticsearchType(Name = "other_resource")]
+    [ElasticsearchType(Name = "other_resources")]
     public class OtherResource
     {
         public string name { get; set; }
-        public float lat { get; set; }
-        public float lon { get; set; }
-        public GeoPoint geo_point { get; set; }
+        public string resource_type { get; set; }
+        [Number(NumberType.Double, Name = "lat")]
+
+        public double lat { get; set; }
+        [Number(NumberType.Double, Name = "lon")]
+        public double lon { get; set; }
+        [GeoPoint(Name="location")]
+        public GeoPoint location { get; set; }
 
     }
 
+
     public class GeoPoint
     {
-        public float lat { get; set; }
-        public float lon { get; set; }
+        [Number(NumberType.Double, Name = "lat")]
+        public double lat { get; set; }
+        [Number(NumberType.Double, Name = "lon")]
+        public double lon { get; set; }
     }
 }
