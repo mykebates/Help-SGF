@@ -11,13 +11,18 @@ import { Data } from '../../providers/data';
 
 export class AboutPage {
 
+    wifis: any;
+
     constructor(public navCtrl: NavController, private dataProvider: Data) {
 
         Geolocation.getCurrentPosition().then((resp) => {
-            alert(resp.coords.latitude);
+            //alert(resp.coords.latitude);
+
+            let self = this;
 
             this.dataProvider.getWifiHotSpots(resp.coords.latitude, resp.coords.longitude, 3).then(function(data: any){
                 console.log(data.hits.hits);
+                self.wifis = data.hits.hits;
             });
 
         }).catch((error) => {

@@ -1,11 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            About
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+    <ion-list>
+        <ion-item *ngFor="let wifi of wifis">
+            <p>
+                {{ wifi._source.name }}
+            </p>
+            <!--<button ion-button clear item-right (click)="goToQuip(quip)">View</button>-->
+        </ion-item>
+    </ion-list>
 </ion-content>
