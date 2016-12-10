@@ -20,8 +20,12 @@ export class AboutPage {
 
             let self = this;
 
+            var appData = JSON.parse( window.localStorage.getItem('wifis'));
+            alert(appData.hits.hits.length);
+            //alert(appData.hits.length);
+
             this.dataProvider.getWifiHotSpots(resp.coords.latitude, resp.coords.longitude, 3).then(function(data: any){
-                console.log(data.hits.hits);
+                //console.log(data.hits.hits);
                 self.wifis = data.hits.hits;
             });
 
