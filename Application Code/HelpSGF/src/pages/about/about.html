@@ -9,10 +9,10 @@
 <ion-content padding>
 
     <ion-list>
-        <ion-item *ngFor="let wifi of wifis">
+        <a ion-item *ngFor="let wifi of wifis" href="https://www.google.com/maps/place/{{ wifi._source.lat }},{{ wifi._source.lon }}" target="_blank">
             <ion-icon name="wifi" item-left></ion-icon>
             {{ wifi._source.name }}
             <span clear item-right style="font-size: .75em;">{{wifi.sort[0] | number:'1.2-2'}} Miles</span>
-        </ion-item>
+        </a>
     </ion-list>
 </ion-content>
