@@ -176,6 +176,8 @@ export class Data {
             this.http.post(this.es_server + 'hack4goodsgf/other_resources/_search', query)
                 .map(res => res.json())
                 .subscribe(data => {
+                    //window.localStorage.setItem( ‘app-name’, JSON.stringify(appData));
+                    window.localStorage.setItem('wifis', JSON.stringify(data));
                     resolve(data);
                 });
         });
