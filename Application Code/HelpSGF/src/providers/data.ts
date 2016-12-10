@@ -24,6 +24,8 @@ export class Data {
     }
   }
 
+    
+
     getShelters(lat: number, lon: number, distance: number){
         let query =  {
             "query": {
