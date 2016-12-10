@@ -13,7 +13,7 @@
 
 <ion-content>
 
-
+    <button ion-button (click)="cameraTest()">Camera</button>
     <div class="categories">
         <ion-grid>
             <ion-row>
@@ -26,7 +26,8 @@
                     <p>Shelter</p>
                 </ion-col>
                 <ion-col width-33>
-                    <img src="assets/images/Food.png" alt="">
+                    <!-- img src="assets/images/Food.png" alt="" -->
+                    <img [src]="base64Image" *ngIf="base64Image" />
                     <p>Food</p>
                 </ion-col>
             </ion-row>
