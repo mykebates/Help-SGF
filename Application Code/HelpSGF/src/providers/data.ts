@@ -65,6 +65,7 @@ export class Data {
 
     getShelters(lat: number, lon: number, distance: number){
         let query =  {
+            "from" : 0, "size" : 100,
             "query": {
                 "bool" : {
                     "must" : {
@@ -110,6 +111,7 @@ export class Data {
 
     getWifiHotSpots(lat: number, lon: number, distance: number){
         let query =  {
+            "from" : 0, "size" : 100,
             "query": {
                 "bool" : {
                     "must" : {
