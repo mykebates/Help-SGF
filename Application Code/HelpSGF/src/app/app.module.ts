@@ -11,6 +11,7 @@ import {ReportCreatePage} from '../pages/alerts/report-create';
 import {ResourcePage} from  '../pages/resource/resource'
 import {ListPage} from  '../pages/resource/list'
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { SearchResultsPage } from '../pages/resource/searchresult';
 
 const cloudSettings: CloudSettings = {
     'core': {
@@ -38,7 +39,8 @@ const cloudSettings: CloudSettings = {
         AlertCreatePage,
         ReportCreatePage,
         ResourcePage,
-        ListPage
+        ListPage,
+        SearchResultsPage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -55,7 +57,8 @@ const cloudSettings: CloudSettings = {
         AlertCreatePage,
         ReportCreatePage,
         ResourcePage,
-        ListPage
+        ListPage,
+        SearchResultsPage
     ],
     providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

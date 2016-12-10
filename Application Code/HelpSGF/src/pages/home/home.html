@@ -3,16 +3,16 @@
         <div class="logo">
             <img src="assets/images/handLogo.png" alt="" />
         </div>
-
-        <div class="search_form">
-            <input type="search">
-            <img src="assets/images/search.png" alt="">
-        </div>
+        <form (ngSubmit)="submitSearchForm()" >
+            <div class="search_form">
+                <ion-input type="text" name="searchText" [(ngModel)]="searchText"></ion-input>
+                <img type="submit" name="btnSubmit" src="assets/images/search.png" alt="" />
+            </div>
+        </form>
     </header>
 </ion-header>
 
 <ion-content>
-
     <div class="categories">
         <ion-grid>
             <ion-row>

@@ -10,7 +10,7 @@ import {ResourcePage} from './resource';
  Ionic pages and navigation.
  */
 @Component({
-    selector: 'page-resource',
+    selector: 'page-list',
     templateUrl: 'list.html',
     providers: [Data]
 })

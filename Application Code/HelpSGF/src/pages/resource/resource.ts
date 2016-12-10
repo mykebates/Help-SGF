@@ -14,7 +14,6 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ResourcePage {
   shelter: any;
   constructor(public navCtrl: NavController, private navParams: NavParams) {
-      console.log(this.navParams.data);
       this.shelter = this.navParams.data;
   }
 
