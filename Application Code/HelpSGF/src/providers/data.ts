@@ -15,9 +15,7 @@ export class Data {
   es_server: string;
 
   constructor(public http: Http, private platform: Platform) {
-    console.log('Hello MyData Provider');
 
-    console.log(platform.is('web'));
 
     if (platform.is('cordova')) {
       this.es_server = "http://192.168.0.137:9200/"
@@ -26,8 +24,52 @@ export class Data {
     }
   }
 
-    getWifiHotSpots(lat: number, lon: number, distance: number)
-    {
+    getShelters(lat: number, lon: number, distance: number){
+        let query =  {
+            "query": {
+                "bool" : {
+                    "must" : {
+                        "match_all": {}
+                    },
+                    "filter" : {
+                        "geo_distance" : {
+                            "distance" : distance + "mi",
+                            "location" : {
+                                "lat" : lat,
+                                "lon" : lon
+                            }
+                        }
+                    }
+                }
+
+            },
+
+            "sort" : [
+                {
+                    "_geo_distance" : {
+                        "location" : [lon, lat],
+                        "order" : "asc",
+                        "unit" : "miles",
+                        "mode" : "min",
+                        "distance_type" : "sloppy_arc"
+                    }
+                }
+            ]
+        };
+
+        return new Promise(resolve => {
+            // We're using Angular HTTP provider to request the data,
+            // then on the response, it'll map the JSON data to a parsed JS object.
+            // Next, we process the data and resolve the promise with the new data.
+            this.http.post(this.es_server + 'hack4goodsgf/shelter/_search', query)
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                });
+        });
+    }
+
+    getWifiHotSpots(lat: number, lon: number, distance: number){
         let query =  {
             "query": {
                 "bool" : {

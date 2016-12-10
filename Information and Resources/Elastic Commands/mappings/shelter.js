@@ -19,6 +19,7 @@
 		"facebookurl":	{ "type": "string" },
 		"twitter":		{ "type": "string" },
 		"services":  	{ "type": "string", "analyzer":"custom_analyzer" },
-        "geo_point":	{"type": "geo_point"}
+        "location":		{"type": "geo_point"},
+        "restriction":  {"type": "string" }
     }
 }
