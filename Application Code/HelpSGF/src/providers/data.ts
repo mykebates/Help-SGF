@@ -13,7 +13,7 @@ import { Platform } from 'ionic-angular';
 export class Data {
 
   es_server: string;
-  
+
   constructor(public http: Http, private platform: Platform) {
     console.log('Hello MyData Provider');
 
@@ -26,25 +26,53 @@ export class Data {
     }
   }
 
-  getTestData(){
+    getWifiHotSpots(lat: number, lon: number, distance: number)
+    {
+        let query =  {
+            "query": {
+                "bool" : {
+                    "must" : {
+                        "term": {
+                            "resource_type": "wifi"
+                        }
+                    },
+                    "filter" : {
+                        "geo_distance" : {
+                            "distance" : distance + "mi",
+                            "location" : {
+                                "lat" : lat,
+                                "lon" : lon
+                            }
+                        }
+                    }
+                }
+            },
+            "sort" : [
+                {
+                    "_geo_distance" : {
+                        "location" : [lon, lat],
+                        "order" : "asc",
+                        "unit" : "miles",
+                        "mode" : "min",
+                        "distance_type" : "sloppy_arc"
+                    }
+                }
+            ]
+        };
 
-    var query = {
-      "query": {
-        "match_all": {}
-      }
-    };
 
-
-    return new Promise(resolve => {
-      // We're using Angular HTTP provider to request the data,
-      // then on the response, it'll map the JSON data to a parsed JS object.
-      // Next, we process the data and resolve the promise with the new data.
-      this.http.post(this.es_server + 'tap_salesportal_0y5eaxcgcb/_search', query)
-        .map(res => res.json())
-        .subscribe(data => {
-          resolve(data);
+        return new Promise(resolve => {
+            // We're using Angular HTTP provider to request the data,
+            // then on the response, it'll map the JSON data to a parsed JS object.
+            // Next, we process the data and resolve the promise with the new data.
+            this.http.post(this.es_server + 'hack4goodsgf/other_resources/_search', query)
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                });
         });
-    });
-  }
+    }
+
+
 
 }
