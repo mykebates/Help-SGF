@@ -1,0 +1,175 @@
+﻿@model DataLibrary.Resource
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Resource</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TTY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tollfree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tollfree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Webpage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Webpage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Twitter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Twitter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Services)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Services)
+        </dd>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccuracyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccuracyType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
