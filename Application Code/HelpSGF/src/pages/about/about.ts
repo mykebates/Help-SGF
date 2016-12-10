@@ -15,25 +15,20 @@ export class AboutPage {
 
     constructor(public navCtrl: NavController, private dataProvider: Data) {
 
-        Geolocation.getCurrentPosition().then((resp) => {
-            //alert(resp.coords.latitude);
-
-            let self = this;
-
-            var appData = JSON.parse( window.localStorage.getItem('wifis'));
-            alert(appData.hits.hits.length);
-            //alert(appData.hits.length);
-
-            this.dataProvider.getWifiHotSpots(resp.coords.latitude, resp.coords.longitude, 3).then(function(data: any){
-                //console.log(data.hits.hits);
-                self.wifis = data.hits.hits;
+        let self = this;
+        var appData = JSON.parse( window.localStorage.getItem('wifis'));
+        if(appData && appData.hits.hits.length) {
+            self.wifis = appData.hits.hits;
+        } else {
+            Geolocation.getCurrentPosition().then((resp) => {
+                this.dataProvider.getWifiHotSpots(resp.coords.latitude, resp.coords.longitude, 3).then(function(data: any){
+                    //console.log(data.hits.hits);
+                    self.wifis = data.hits.hits;
+                });
+            }).catch((error) => {
+                console.log('Error getting location', error);
             });
-
-        }).catch((error) => {
-            console.log('Error getting location', error);
-        });
-
-
+        }
     }
 
 

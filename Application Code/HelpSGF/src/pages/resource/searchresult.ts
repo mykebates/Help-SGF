@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { Data } from '../../providers/data';
-import {Geolocation} from 'ionic-native';
 import {ResourcePage} from './resource';
 /*
  Generated class for the Resource page.
