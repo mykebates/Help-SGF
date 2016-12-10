@@ -49,3 +49,8 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+ImportData/.vs/ImportData/v14/.suo
+*.pdb
+ImportData/packages/
+ImportData/ImportData/obj/
+ImportData/ImportData/bin/

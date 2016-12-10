@@ -2,5 +2,9 @@
   "name": "HelpSGF",
   "app_id": "8af7b9cd",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [{
+    "path": "/api",
+    "proxyUrl": "http://192.168.0.137:9200"
+  }]
 }
