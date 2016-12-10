@@ -16,6 +16,11 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.ionicframework.helpsgf381988"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.ionicframework.helpsgf381988"
         }
     },
     "dependent_plugins": {
