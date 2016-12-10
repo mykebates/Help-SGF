@@ -5,6 +5,101 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <header padding>
+        <div class="main">
+            <h1>Parenting Life Skills Center (PLSC) - A Great Circle Agency</h1>
+            <h2>.2 mi</h2>
+        </div>
 
+        <div class="secondary">
+            <div class="left">
+                <h3>WIFI, Resources, Community, Jobs</h3>
+                <h4>Hours Today: 9:00 AM – 3:00 PM</h4>
+            </div>
+            <div class="right">
+                <h5>closes in 12 min</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="map">
+        <!--<img src="assets/images/map.png" alt="" style="width: 100%;">-->
+        <div #map id="map"></div>
+    </div>
+
+    <div class="details">
+        <ion-list>
+            <ion-item>
+                <h2>600 S. Jefferson Ave., Springfield, MO 65806</h2>
+                <p></p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="navigate" item-left color="primary"></ion-icon>
+                <h2>Directions</h2>
+                <p>4 min walk</p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="call" item-left color="primary"></ion-icon>
+                <h2>Call</h2>
+                <p>417-831-9596</p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="link" item-left color="primary"></ion-icon>
+                <h2>Website</h2>
+                <p><a href="#">http://greatcircle.org</a></p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="logo-facebook" item-left color="primary"></ion-icon>
+                <h2>Facebook</h2>
+                <p>/greatcircle</p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="logo-twitter" item-left color="primary"></ion-icon>
+                <h2>Twitter</h2>
+                <p>@greatcircleorg</p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="information-circle" item-left color="primary"></ion-icon>
+                <h2>Full Details</h2>
+                <p>Services, Eligbility, Transit, Hours</p>
+                <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+            </ion-item>
+        </ion-list>
+
+        <hr>
+
+        <ion-row no-padding>
+            <ion-col>
+                <button ion-button clear color="primary" icon-left>
+                    <ion-icon name='text'></ion-icon>
+                    Text
+                </button>
+            </ion-col>
+            <ion-col text-center>
+                <button ion-button clear color="primary" icon-left>
+                    <ion-icon name='copy'></ion-icon>
+                    Copy Link
+                </button>
+            </ion-col>
+            <ion-col text-right>
+                <button ion-button clear color="primary" icon-left>
+                    <ion-icon name='share-alt'></ion-icon>
+                    More
+                </button>
+            </ion-col>
+        </ion-row>
+    </div>
 </ion-content>
